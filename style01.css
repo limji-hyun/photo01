@@ -19,48 +19,40 @@ body { font-family: -apple-system, sans-serif; background-color: #000; }
 }
 
 .home-content {
-    width: 100%; 
-    max-width: 400px; /* 모바일에서 너무 커지지 않게 조절 */
-    margin: 20px 0; 
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 달 이미지 */
+/* 메인 영 */
 .main-mp4 {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative; /* absolute에서 relative로 변경하여 레이아웃 흐름 유지 */
     width: 100%;
-    max-width: 400px; /* 모바일에서 너무 커지지 않게 조절 */
-    height: 100%;
-    aspect-ratio: 3 / 4; /* 프레임 비율과 일치 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    aspect-ratio: 3 / 4; /* 3:4 비율 고정 */
+    object-fit: cover;   /* 비율에 맞춰 꽉 채움 */
+    border-radius: 12px;
     border: 5px solid #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #000;
 }
 
-/* 타이틀 로고 */
-.title-gif {
+/* [입장 버튼 위치 조정] */
+.home-controls {
     width: 100%;
-    max-width: 100%;
-    z-index: 5;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* 영상 바로 아래에 위치 */
 }
 
-/* 비행선 */
-.ship {
-    position: absolute;
-    width:auto;
-    height:100%;
-    opacity: 1;
-    z-index: 1;
-    -webkit-transform: translateZ(0); /* 아이폰 가속 */
-}
-
-.ship1 {
-    right: 30px; /* 오른쪽 30px 여백 */    
-}
-
-.ship2 {
-    left: 30px; /* 왼쪽 30px 여백 */
+#enter-btn {
+    width: 200px;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: 0; /* 기존 150% 제거 */
 }
 
 /* [촬영 부스 스타일] */
