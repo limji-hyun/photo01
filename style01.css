@@ -53,15 +53,14 @@ body { font-family: -apple-system, sans-serif; background-color: #000; }
 #video { transform: scaleX(-1); }
 
 .main-mp4 {
-    position: fixed; /* 화면에 고정 */
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%); /* 중앙 정렬 */
-    min-width: 100%; 
-    min-height: 100%;
-    width: auto; 
-    height: auto;
-    object-fit: cover; /* 빈틈 없이 꽉 채움 */
-    z-index: -1; /* 모든 요소보다 뒤로 */
+    position: relative; /* absolute에서 relative로 변경하여 레이아웃 흐름 유지 */
+    width: 100%;
+    aspect-ratio: 3 / 4; /* 3:4 비율 고정 */
+    object-fit: cover;   /* 비율에 맞춰 꽉 채움 */
+    border-radius: 12px;
+    border: 5px solid #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #000;
 }
 
 /* 버튼 컨트롤 영역 (홈과 부스 위치 동일하게 조정) */
