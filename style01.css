@@ -1,0 +1,170 @@
+/* 기본 리셋 및 확대 축소 방지 보조 */
+html, body { 
+    margin: 0; padding: 0; width: 100%; height: 100%; 
+    overflow: hidden; touch-action: manipulation; /* 터치 지연 및 확대 방지 */
+}
+
+body { font-family: -apple-system, sans-serif; background-color: #000; }
+
+.container { width: 100%; height: 100%; }
+
+/* [홈 화면] */
+#home-screen {
+    width: 100%; height: 100vh;
+    background: url('img/bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex; justify-content: center; align-items: center;
+    position: relative;
+    z-index: 1; /* 배경 레이어 */
+}
+
+.home-content {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; z-index: 2; /* 콘텐츠 레이어 */
+}
+
+/* 달 이미지 */
+.moon-img {
+    position: absolute;
+    top: 38%;
+    width: 70%;
+    z-index: 2;
+}
+
+/* 타이틀 로고 */
+.title-gif {
+    width: 100%;
+    max-width: 100%;
+    z-index: 5;
+    margin-bottom: 20px;
+}
+
+/* 비행선 */
+.ship {
+    position: absolute;
+    width:auto;
+    height:100%;
+    opacity: 1;
+    z-index: 1;
+    -webkit-transform: translateZ(0); /* 아이폰 가속 */
+}
+
+.ship1 {
+    right: 30px; /* 오른쪽 30px 여백 */    
+}
+
+.ship2 {
+    left: 30px; /* 왼쪽 30px 여백 */
+}
+
+/* [촬영 부스 스타일] */
+#booth-screen { 
+    background: #81adff; 
+    min-height: 100vh; 
+    padding: 20px 25px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.photo-wrapper { 
+    width: 100%; 
+    max-width: 400px; /* 모바일에서 너무 커지지 않게 조절 */
+    margin: 20px 0; 
+}
+
+.photo-zone {
+    position: relative; 
+    width: 100%; 
+    aspect-ratio: 3 / 4; /* 프레임 비율과 일치 */
+    background: #000; 
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 5px solid #000;
+}
+
+/* 비디오와 프레임, 미리보기를 절대 위치로 겹침 */
+#video, .preview-overlay, .frame-overlay, .date-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#video { 
+    object-fit: cover; /* 화면을 꽉 채움 */
+    z-index: 1; 
+    transform: scaleX(-1); /* 거울 모드 */
+}
+
+.preview-overlay { 
+    object-fit: cover; 
+    z-index: 2; 
+    display: none; 
+}
+
+.frame-overlay {
+    position: absolute;
+    top: 0; /* 꼭 확인! */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* 프레임이 박스에 꽉 차도록 설정 */
+    z-index: 4;
+    pointer-events: none;
+}
+
+.date-overlay {
+    z-index: 10;
+    color: #000000 !important;
+    font-family: 'Mona', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 17px; /* 상단에서 17px 위치 */
+    pointer-events: none;
+}
+
+/* 날짜 스타일 유지 */
+.date-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    color: #000000 !important;
+    font-family: 'Mona', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.controls { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+/* 이미지 버튼 공통 스타일 */
+.custom-btn-sub {
+    width: 180px; cursor: pointer; display: block; margin: 0 auto;
+    transition: transform 0.1s ease; -webkit-tap-highlight-color: transparent;
+}
+.custom-btn-sub:active { transform: scale(0.95); opacity: 0.8; }
+
+#enter-btn {
+    width: 200px;
+    cursor: pointer;
+    z-index: 10;
+    margin-top: 150%;
+}
+
+.flash-effect::after { content: ""; position: absolute; inset: 0; background: white; z-index: 20; animation: flash-anim 0.3s forwards; }
+@keyframes flash-anim { from { opacity: 1; } to { opacity: 0; } }
+
+
+
+
+
+
+
+
+
