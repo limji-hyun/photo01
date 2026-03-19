@@ -12,6 +12,16 @@ const photoZone = document.getElementById('photo-zone');
 
 let finalImageData = null;
 
+window.addEventListener('load', () => {
+    const mainVideo = document.querySelector('.main-mp4');
+    if (mainVideo) {
+        mainVideo.autoplay = true;
+        mainVideo.loop = true;
+        mainVideo.muted = true; // 브라우저 정책상 뮤트 필수
+        mainVideo.play().catch(e => console.log("자동 재생 방지 해제 필요"));
+    }
+});
+
 // 날짜 포맷 (YYYY.MM.DD HH:mm)
 function getFormattedDateTime() {
     const now = new Date();
