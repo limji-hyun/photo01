@@ -60,7 +60,6 @@ body { font-family: -apple-system, sans-serif; background-color: #000; }
     border-radius: 12px;
     border: 5px solid #000;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    background: #000;
 }
 
 /* 버튼 컨트롤 영역 (홈과 부스 위치 동일하게 조정) */
@@ -106,7 +105,7 @@ body { font-family: -apple-system, sans-serif; background-color: #000; }
     border-radius: 12px; 
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 5px solid #000;
+    border: 5px solid #fff;
 }
 
 /* 비디오와 프레임, 미리보기를 절대 위치로 겹침 */
