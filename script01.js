@@ -9,16 +9,18 @@ const retakeBtn = document.getElementById('retake-btn');
 const enterBtn = document.getElementById('enter-btn');
 const previewControls = document.getElementById('preview-controls');
 const photoZone = document.getElementById('photo-zone');
+const mainVideo = document.querySelector('.main-mp4');
 
 let finalImageData = null;
 
 window.addEventListener('load', () => {
-    const mainVideo = document.querySelector('.main-mp4');
     if (mainVideo) {
-        mainVideo.autoplay = true;
+        mainVideo.muted = true;
         mainVideo.loop = true;
-        mainVideo.muted = true; // 브라우저 정책상 뮤트 필수
-        mainVideo.play().catch(e => console.log("자동 재생 방지 해제 필요"));
+        mainVideo.playsInline = true; // 모바일 전체화면 방지
+        mainVideo.play().catch(() => {
+            console.log("자동 재생을 위해 사용자 상호작용이 필요할 수 있습니다.");
+        });
     }
 });
 
@@ -32,7 +34,7 @@ function getFormattedDateTime() {
 setInterval(() => { dateOverlay.innerText = getFormattedDateTime(); }, 1000);
 dateOverlay.innerText = getFormattedDateTime();
 
-// [btn1] 입장하기
+// [입장하기] 클릭 시
 enterBtn.addEventListener('click', async () => {
     try {
         const stream = await navigator.mediaDevices.getUserMedia({
@@ -40,9 +42,17 @@ enterBtn.addEventListener('click', async () => {
             audio: false
         });
         video.srcObject = stream;
+        video.play();
+
+        // 홈 화면을 숨기고 부스 화면 표시
         document.getElementById('home-screen').style.display = "none";
         document.getElementById('booth-screen').style.display = "flex";
-    } catch (err) { alert("카메라 접근 권한을 허용해주세요."); }
+        
+        // 배경 비디오를 멈추고 싶다면 아래 주석 해제 (계속 틀어두려면 무시)
+        // mainVideo.pause(); 
+    } catch (err) {
+        alert("카메라 권한을 허용해주세요.");
+    }
 });
 
 // [btn2] 사진 찍기
