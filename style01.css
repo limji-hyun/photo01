@@ -117,10 +117,10 @@ body { font-family: -apple-system, sans-serif; background-color: #111; }
     z-index: 10;
     color: #ffffff !important;
     font-family: 'Mona', sans-serif;
-    font-size: 0.80rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-align: center;
-    padding-top: 1px; /* 상단에서 10px 위치 */
+    padding-top: 10px; /* 상단에서 10px 위치 */
     pointer-events: none;
 }
 
