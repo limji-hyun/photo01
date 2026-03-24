@@ -52,7 +52,7 @@ body { font-family: -apple-system, sans-serif; background-color: #111; }
 
 .main-mp4 {
     position: relative; /* absolute에서 relative로 변경하여 레이아웃 흐름 유지 */
-    aspect-ratio: 3 / 4; /* 3:4 비율 고정 */
+    aspect-ratio: 2.5 / 4; /* 3:4 비율 고정 */
     border-radius: 12px;
     /* border: 5px solid #000; */
     box-shadow: 0 10px 30px rgb(0 0 0 / 50%);
