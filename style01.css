@@ -32,7 +32,6 @@ body { font-family: -apple-system, sans-serif; background-color: #111; }
     flex-direction: column; 
     align-items: center;
     justify-content: center;
-    margin-bottom:50px;    
 }
 
 .title-gif{
@@ -46,6 +45,7 @@ body { font-family: -apple-system, sans-serif; background-color: #111; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom:50px;
 }
 
 #video, .preview-overlay {
