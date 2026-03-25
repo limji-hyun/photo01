@@ -129,15 +129,13 @@ body { font-family: -apple-system, sans-serif; background-color: #111; }
     transition: transform 0.1s ease;
     -webkit-tap-highlight-color: transparent;
     display: block;
+    filter: drop-shadow( 0 10px 30px rgba(255,255,255,0.5));
 }
 
 /* 이미지 버튼 공통 스타일 */
 .custom-btn-sub {
     margin: 0 auto;
 }
-
-
-.custom-btn img, .custom-btn-sub img{box-shadow: 0 10px 30px rgba(255,255,255,0.5);}
 
 .custom-btn-sub:active { transform: scale(0.95); opacity: 0.8; }
 
