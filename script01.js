@@ -93,7 +93,7 @@ snapBtn.addEventListener('click', () => {
     ctx.fillStyle = "#ffffff";
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
-    ctx.fillText(getFormattedDateTime(), canvas.width / 2, 60);
+    ctx.fillText(getFormattedDateTime(), canvas.width / 2, 57);
 
     finalImageData = canvas.toDataURL('image/png');
     previewImg.src = finalImageData;
