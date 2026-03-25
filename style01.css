@@ -45,7 +45,7 @@ body { font-family: -apple-system, sans-serif; background-color: #111; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom:50px;
+    margin-bottom:100px;
 }
 
 #video, .preview-overlay {
